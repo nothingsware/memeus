@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,16 +13,15 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            animation: bg 15s infinite;
+            animation: bg 20s infinite;
         }
 
         .meme {
-            width: 500px;
-            height: 500px;
-            background-image: url('https://i.kym-cdn.com/photos/images/original/002/791/193/d64');
+            width: 1000px;
+            height: 1000px;
             background-size: cover;
             position: relative;
-            animation: spin 15s infinite linear;
+            animation: spin 20s infinite linear;
         }
 
         .meme::after {
@@ -44,6 +44,17 @@
             100% { background-color: #ddd; }
         }
     </style>
+    <script>
+        var images = ['https://i.kym-cdn.com/photos/images/original/002/791/193/d64', 'https://th.bing.com/th/id/OIP.8obYCnLqofx4G1-9H9dw_AHaJ4?rs=1&pid=ImgDetMain', 'https://ih1.redbubble.net/image.732342165.9908/flat,1000x1000,075,f.u2.jpg']; // replace with your image URLs
+        var i = 0;
+
+        function changeImage() {
+            document.querySelector('.meme').style.backgroundImage = 'url(' + images[i] + ')';
+            i = (i + 1) % images.length;
+        }
+
+        setInterval(changeImage, 10000)
+    </script>
 </head>
 <body>
     <a href="https://maper.info/2KzwK5">
