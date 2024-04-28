@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Meme Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            animation: bg 15s infinite;
+        }
+
+        .meme {
+            width: 500px;
+            height: 500px;
+            background-image: url('https://i.kym-cdn.com/photos/images/original/002/791/193/d64');
+            background-size: cover;
+            position: relative;
+            animation: spin 15s infinite linear;
+        }
+
+        .meme::after {
+            content: 'Memes US';
+            color: black;
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            font-size: 2em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes bg {
+            0%, 70% { background-color: #f0f0f0; }
+            100% { background-color: #ddd; }
+        }
+    </style>
+</head>
+<body>
+    <div class="meme"></div>
+</body>
+</html>
